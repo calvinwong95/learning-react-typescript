@@ -17,6 +17,10 @@ import { MutableRef } from './components/ref/MutableRef';
 import { Private } from './components/auth/Private';
 import { Profile } from './components/auth/Profile';
 import { List } from './components/generics/List';
+import { RandomNumber } from './components/restrictions/RandomNumber';
+import { Toast } from './components/templateliterals/Toast';
+import { CustomButton } from './components/html/Button';
+import { Text } from './components/polymorphic/Text';
 function App() {
 
   const personName = {
@@ -42,19 +46,12 @@ function App() {
     <div className="App">
       <UserContextProvider>
         <ThemeContextProvider>
-          <List items={['Batman','Superman','Wonder Woman']} onClick={(item)=>console.log(item)}/>
-          <List items={[1,2,3]} onClick={(item)=>console.log(item)}/>
-          <List items={[
-          {
-            first: 'Bruce',
-            last: 'Wayne',
-          },
-          {
-            first: 'Clark',
-            last: 'Kent',
-          },
-          ]} onClick={(item)=>console.log(item)}/>
-  {/* <Greet name="CheeHoe" messageCount={20} isLoggedIn={false}/>
+          <Text as='h1' size={'lg'}>Heading</Text>
+          <Text as='p' size={'md'}>Paragraph</Text>
+          <Text as='label' htmlFor="someId" size={'sm'} color={'secondary'}>Label</Text>
+    {/* <Toast position="center" /> */}
+    {/* <RandomNumber value={10} isPositive /> */}
+    {/* <Greet name="CheeHoe" messageCount={20} isLoggedIn={false}/>
      <Person name={personName} />
      <PersonList names={nameList} />
      <Status  status="loading"/>
